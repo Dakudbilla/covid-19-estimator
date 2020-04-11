@@ -5,7 +5,7 @@ const covid19ImpactEstimator = (data) => {
     data.timeToElapse *= 30;
   }
   const { reportedCases, totalHospitalBeds, timeToElapse } = data;
-  const { avgDailyIncomePopulation, population } = data.region;
+  const { avgDailyIncomePopulation } = data.region;
   // Impact object
   const impact = {
     currentlyInfected: reportedCases * 10,
@@ -26,7 +26,7 @@ const covid19ImpactEstimator = (data) => {
       return Math.trunc(this.infectionsByRequestedTime * 0.02);
     },
     get dollarsInFlight() {
-      const dollarLost = this.infectionsByRequestedTime * population;
+      const dollarLost = this.infectionsByRequestedTime * data.population;
       return Math.trunc((dollarLost * avgDailyIncomePopulation) / timeToElapse);
     }
   };
@@ -51,7 +51,8 @@ const covid19ImpactEstimator = (data) => {
       return Math.trunc(this.infectionsByRequestedTime * 0.02);
     },
     get dollarsInFlight() {
-      const dollarLost = this.infectionsByRequestedTime * population;
+      const dollarLost = this.infectionsByRequestedTime * data.population;
+
       return Math.trunc((dollarLost * avgDailyIncomePopulation) / timeToElapse);
     }
   };
