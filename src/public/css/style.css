@@ -1,0 +1,31 @@
+body {
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+div > div {
+  background-color: DD;
+}
+
+input {
+  margin: 6px;
+  display: block;
+  width: 80%;
+  height: 25px;
+}
+label {
+  display: block;
+  margin-top: 40px;
+}
+form {
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+  margin-top: 20px;
+}
+
+select {
+  margin-bottom: 30px;
+}
