@@ -12,21 +12,21 @@ const covid19ImpactEstimator = (data) => {
     currentlyInfected: reportedCases * 10,
     infectionsByRequestedTime:
       reportedCases * 10 * 2 ** Math.trunc(timeToElapse / 3),
-    get severeCasesByRequestedTime () {
+    get severeCasesByRequestedTime() {
       return Math.trunc(this.infectionsByRequestedTime * 0.15);
     },
-    get hospitalBedsByRequestedTime () {
+    get hospitalBedsByRequestedTime() {
       return Math.trunc(
         totalHospitalBeds * 0.35 - this.severeCasesByRequestedTime
       );
     },
-    get casesForICUByRequestedTime () {
+    get casesForICUByRequestedTime() {
       return Math.trunc(this.infectionsByRequestedTime * 0.05);
     },
-    get casesForVentilatorsByRequestedTime () {
+    get casesForVentilatorsByRequestedTime() {
       return Math.trunc(this.infectionsByRequestedTime * 0.02);
     },
-    get dollarsInFlight () {
+    get dollarsInFlight() {
       const dollarLost = this.infectionsByRequestedTime * avgDailyIncomePopulation;
       return Math.trunc((dollarLost * avgDailyIncomeInUSD) / timeToElapse);
     }
@@ -37,21 +37,21 @@ const covid19ImpactEstimator = (data) => {
     currentlyInfected: reportedCases * 50,
     infectionsByRequestedTime:
       reportedCases * 50 * 2 ** Math.trunc(timeToElapse / 3),
-    get severeCasesByRequestedTime () {
+    get severeCasesByRequestedTime() {
       return Math.trunc(this.infectionsByRequestedTime * 0.15);
     },
-    get hospitalBedsByRequestedTime () {
+    get hospitalBedsByRequestedTime() {
       return Math.trunc(
         totalHospitalBeds * 0.35 - this.severeCasesByRequestedTime
       );
     },
-    get casesForICUByRequestedTime () {
+    get casesForICUByRequestedTime() {
       return Math.trunc(this.infectionsByRequestedTime * 0.05);
     },
-    get casesForVentilatorsByRequestedTime () {
+    get casesForVentilatorsByRequestedTime() {
       return Math.trunc(this.infectionsByRequestedTime * 0.02);
     },
-    get dollarsInFlight () {
+    get dollarsInFlight() {
       const dollarLost = this.infectionsByRequestedTime * avgDailyIncomePopulation;
 
       return Math.trunc((dollarLost * avgDailyIncomeInUSD) / timeToElapse);
